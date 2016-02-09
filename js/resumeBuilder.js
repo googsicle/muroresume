@@ -4,11 +4,17 @@
 
 var bio={
 	"name":"Simone Muro",
-	"role":"children's Entertainer",
-	"contacts":{"mobile":"000-000", "email":"catinthehat@gmail.com", "twitter":"@cathat", "github":"@clevercat", "location":"La Jolla, CA"},
-	"welcomemessage":"Why do you sit there like that? I know it wet and the Sun is not sunny but we can have lots of good fun that is funny!!",
-	"skills":["Entertainer","creative", "clever","persistant","adventurous", "fun"],
-	"biopic":"images/Cat.jpg",
+	"role":"Brazilian-Portuguese Linguist Expert",
+	"contacts":{
+				"mobile":"650-7037496",
+				"email":"googsicle@gmail.com",
+				"twitter":"@googsicle",
+				"github":"googsicle@github.com",
+				"location":"San Francisco Bay Area, CA"
+				},
+	"welcomemessage":"Welcome to my online Resume!!",
+	"skills":["Localization","Translation","Content-Curation","HTML","CSS","javaScript", "GitHub"],
+	"biopic":"images/self.jpg",
 	"display":function(){
 		var formattedName=HTMLheaderName.replace("%data%", bio.name);
 		var formattedRole=HTMLheaderRole.replace("%data%" , bio.role);
@@ -16,8 +22,9 @@ var bio={
 		var formattedWelcomeMessage=HTMLWelcomeMsg.replace("%data%", bio.welcomemessage);
 		$("#header").prepend(formattedRole);
 		$("#header").prepend(formattedName);
-		$("#header").append(formattedBioPic);
 		$("#header").append(formattedWelcomeMessage);
+		$("#header").append(formattedBioPic);
+		
 	},
 	"displayContacts":function(){
 		var formattedMobile=HTMLmobile.replace("%data%", bio.contacts.mobile);
@@ -46,6 +53,8 @@ var bio={
 		$("#skills").append(formattedSkills);
 		var formattedSkills=HTMLskills.replace("%data%", bio.skills[5]);
 		$("#skills").append(formattedSkills);
+		var formattedSkills=HTMLskills.replace("%data%", bio.skills[6]);
+		$("#skills").append(formattedSkills);
 		}
 	},
 	"displayFooterContacts":function(){
@@ -66,11 +75,21 @@ var bio={
 
 var education={
 	"schools":[
-				{"name":"Cat's University","location":"CA","degree":"Entertainment","major":"Tricks and games","dates":"1952"}
+				{"name":"Univale",
+				"location":"Brazil",
+				"degree":"BA",
+				"major":"Law",
+				"dates":"1994-1998"}
 				],
 	"onlineCourses":[
-						{"title":"Cat cleverness","school":"Just for cats","dates":"2015", "url":"beclever.com"},
-						{"title":"Master tricks","school":"Just for cats","dates":"2015", "url":"betricalatious.com"}
+						{"title":"Python",
+						"school":"Coursera",
+						"dates":"2014",
+						"url":"coursera.com"},
+						{"title":"Front-End Web Developer",
+						"school":"Udacity",
+						"dates":"2015/2016",
+						"url":"Udacity.com"}
 					],
 	"displaySchool":function(){
 		for(school in education.schools){
@@ -83,7 +102,7 @@ var education={
 			var formattedSchoolMajor=HTMLschoolMajor.replace("%data%", education.schools[school].major);
 			var formattedSchoolNameDegree= formattedSchoolName + formattedSchoolDegree;
 			$(".education-entry:last").append(formattedSchoolNameDegree) ;
-			$(".education-entry:last").append(formattedSchoolDates);
+			$(".education-entry:last").append(formattedSchoolDatesLocation);
 			$(".education-entry:last").append(formattedSchoolMajor);
 		
 		}
@@ -110,10 +129,35 @@ var education={
 
 var work={
 	"jobs":[
-				{"employer":"English-speaking children of the world","title":"entertainer","location":"USA", "dates":"1956-present","description":"Entertain children by playing awesome tricks and games"},
-				{"employer":"English-speaking children of the world","title":"entertainer","location":"USA", "dates":"1956-present","description":"Entertain children by playing awesome tricks and games"},
-				{"employer":"English-speaking children of the world","title":"entertainer","location":"USA", "dates":"1956-present","description":"Entertain children by playing awesome tricks and games"},
-				{"employer":"English-speaking children of the world","title":"entertainer","location":"USA", "dates":"1956-present","description":"Entertain children by playing awesome tricks and games"}
+				{"employer":"Linguistica International",
+				"title":"Interpreter",
+				"location":"West Jordan, UT",
+				"dates":"2015-present",
+				"description":"Perform over-the-phone interpretation for various sectors such as medical, " +
+				"legal, emergency and human services."
+				},
+				{"employer":"Brazilian Portuguese Translation and Interpretation Services",
+				"title":"Portuguese Language Specialist",
+				"location":"San Francisco, Bay area",
+				"dates":"2006-present",
+				"description":"Conduct remote linguistic testing, localization, " +
+					"content curation and translation for direct clients." +
+					"Translating Certificates, Degrees in both Graduate and Undergraduate Studies. " +
+					"Assisting with INS information, birth, marriage license, divorce document translations. " +
+					"Assisting with Especial Education Law (IDEA) information and translation of all documentations such as statements, letters, medical and insurance records to support special needs student’s case during IEP. "+
+					"Attending IEP meetings to provide interpretation and clarification of IEP process. " +
+					"Providing interpretation services at court hearings, depositions, and INS interview meetings. " +
+					"Providing general translation/interpretation services and language support within the Bay area Brazilian community."
+				},
+				{"employer":"e2f Translations",
+				"title":"Tranlator/Voice-over/Content Curator",
+				"location":"Santa Clara, CA",
+				"dates":"2012-present",
+				"description":"Content curation and translation from English into Portuguese including but not limited to:, " +
+					"children’s apps, mobile applications, audio books, podcasts, telephone prompts and greetings, navigation devices, automated teller, gaming, flash animations, online courses, corporate presentations, etc. " +
+					"Assist with localization efforts for Brazilian Portuguese market release. Perform voice-over recordings in Brazilian-Portuguese for audio, podcasts, telephone prompts and greetings, automated teller, " +
+					"gaming and animations and a variety of children’s apps. Proofread translation content for Syntax, grammar, cultural and style errors."
+				}
 			],
 	"display":function (){
 		for (job in work.jobs){
@@ -135,9 +179,19 @@ var work={
 
 
 var projects={"projects":[
-							{"title": "Fun-in-a-box","dates":"1956","description":"A big red wood box with two things that love to play games","images":"images/redbox.jpg"},
-							{"title":"Two things","dates":"1956","description":"Two little creatures who loves to fly kites in the house","images":"images/twothings.jpg"},
-							{"title":"Pick up toys machine","dates":"1956","description":"The fastest and most efficient pick up toy machine you will ever see","images":"images/redmachine.jpg"}
+							{"title":"COMING SOON!!!",
+							"dates":"2016",
+							"description":"Something beautiful and exciting to show off my new acquired web developer skills",
+							"images":"images/project.jpg"
+							},
+							{"title":"COMING SOON!!!",
+							"dates":"2016",
+							"description":"Something beautiful and exciting to show off my new acquired web developer skills",
+							"images":"images/project.jpg"
+							},
+							{"title":"COMING SOON!!!","dates":"2016","description":"Something beautiful and exciting to show off my new acquired web developer skills",
+							"images":"images/project.jpg"
+							}
 						],
 				"display":function(){
 					for(project in projects.projects){
@@ -150,7 +204,7 @@ var projects={"projects":[
 						$(".project-entry:last").append(formattedprojectDescription);
 						if(projects.projects[project].images.length>0){
 							var formattedImage=HTMLprojectImage.replace("%data%", projects.projects[project].images);
-							$(".project-entry:last").append ( formattedImage);		
+							$(".project-entry:last").append (formattedImage);		
 						}
 					}
 				}
@@ -309,10 +363,6 @@ bio.displaySkills();
 		$("#footerContacts:last").append(formattedTwitter);
 		$("#footerContacts:last").append(formattedGitHub);
 		$("#footerContacts:last").append(formattedLocation);
-
-
-
-
 }*/
 
 bio.displayFooterContacts();
